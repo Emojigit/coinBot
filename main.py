@@ -1,4 +1,4 @@
-from telethon import TelegramClient, utils
+from telethon import TelegramClient, utils, events
 import logging, config, random
 
 logging.basicConfig(level=config.logging_level,format=config.logging_format)
