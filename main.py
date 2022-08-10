@@ -21,5 +21,12 @@ async def checkpriv(event):
     log.info("User {} (lang \"{}\") executed /tosscoin".format(event.sender.id,event.sender.lang_code))
     raise events.StopPropagation
 
+@bot.on(events.NewMessage(pattern='/meow'))
+async def meow(event):
+    await event.respond("喵！" if event.sender.lang_code.startswith("zh") else "Nya~")
+    log.info("User {} (lang \"{}\") executed /meow".format(event.sender.id,event.sender.lang_code))
+    raise events.StopPropagation
+
+
 log.info("Finished. Starting bot...")
 bot.run_until_disconnected()
